@@ -72,6 +72,8 @@
   --font-display: "paralucent", "Paralucent", "Paralucent Fallback", "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
   --font-body: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
 
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+
   --gutter: clamp(20px, 5vw, 120px);
   --section-y: 96px;
   --section-y-xl: 128px;
@@ -335,10 +337,6 @@ h1, h2, h3, .faq__q {
 
 .btn:hover .btn__arrow {
   transform: translateX(3px);
-}
-
-.btn:active {
-  transform: translateY(1px);
 }
 
 .btn--md {
@@ -1380,22 +1378,21 @@ h1, h2, h3, .faq__q {
   position: relative;
   flex: 1 0 0;
   min-width: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-  overflow: clip;
 }
 
-/* Verlauf über der letzten Karte, wie im Design */
-.audience::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: -8px;
-  height: 71px;
-  background: linear-gradient(to top, #f6f8fb, rgba(246, 248, 251, 0.2));
-  pointer-events: none;
+.audience__track,
+.audience__set {
+  display: flex;
+  flex-direction: column;
+}
+
+.audience__set {
+  gap: 24px;
+}
+
+/* Die Kopie für die Schleife legt das Script an */
+.audience__set[aria-hidden="true"] {
+  display: none;
 }
 
 /* ---------- Vergleich ---------- */
@@ -1653,8 +1650,9 @@ h1, h2, h3, .faq__q {
   pointer-events: none;
 }
 
+/* Das Formular ist als Mehrschritt kürzer als im Figma, der Schein sitzt deshalb tiefer */
 .cta__bloom--1 {
-  bottom: -54px;
+  bottom: -274px;
   height: 480px;
   background: rgba(0, 161, 228, 0.6);
   filter: blur(130px);
@@ -1663,7 +1661,7 @@ h1, h2, h3, .faq__q {
 .cta__bloom--2 {
   left: -172px;
   right: -172px;
-  bottom: -334px;
+  bottom: -554px;
   height: 874px;
   background: linear-gradient(to top, rgba(100, 219, 228, 0.71), rgba(100, 219, 228, 0));
   filter: blur(120px);
@@ -1751,7 +1749,12 @@ h1, h2, h3, .faq__q {
 }
 
 .field-group legend {
-  margin-bottom: 12px;
+  margin-bottom: 16px;
+  font-family: var(--font-display);
+  font-size: 20px;
+  line-height: 28px;
+  font-weight: 600;
+  letter-spacing: -0.1px;
 }
 
 .chips {
@@ -1851,6 +1854,120 @@ h1, h2, h3, .faq__q {
   outline: none;
   border-color: var(--blue-600);
   box-shadow: 0 0 0 3px var(--blue-50);
+}
+
+.form-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.form-step--contact {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.form-progress,
+.form-nav {
+  display: none;
+}
+
+.lead-form.is-stepped .form-progress {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.form-progress__bars {
+  flex: 1 0 0;
+  display: flex;
+  gap: 6px;
+}
+
+.form-progress__bars span {
+  flex: 1 0 0;
+  height: 4px;
+  border-radius: 2px;
+  background: var(--border);
+  transition: background-color 200ms ease;
+}
+
+.form-progress__bars .is-done {
+  background: var(--blue-600);
+}
+
+.lead-form.is-stepped [data-step]:not(.is-active) {
+  display: none;
+}
+
+.lead-form.is-stepped .form-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  min-height: 40px;
+}
+
+.form-nav__back {
+  padding: 8px 0;
+  border: 0;
+  background: none;
+  color: var(--text-secondary);
+  font: inherit;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: color 150ms ease;
+}
+
+.form-nav__back[hidden],
+.form-nav__next[hidden] {
+  display: none;
+}
+
+.form-nav__next {
+  margin-left: auto;
+  transition: background-color 180ms ease, opacity 180ms ease, transform 160ms var(--ease-out);
+}
+
+.form-nav__next[disabled] {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.phone {
+  display: flex;
+  gap: 8px;
+}
+
+.phone__code {
+  flex: none;
+  width: 112px;
+  padding: 14px 36px 14px 16px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--white) url("../assets/icons/chevron-down.svg") right 8px center / 24px 24px no-repeat;
+  color: var(--text-primary);
+  font: inherit;
+  font-size: 16px;
+  line-height: 24px;
+  -webkit-appearance: none;
+  appearance: none;
+  cursor: pointer;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.phone__code:focus {
+  outline: none;
+  border-color: var(--blue-600);
+  box-shadow: 0 0 0 3px var(--blue-50);
+}
+
+.phone input {
+  flex: 1 0 0;
+  min-width: 0;
 }
 
 .lead-form__note {
@@ -2073,10 +2190,6 @@ h1, h2, h3, .faq__q {
     flex: none;
   }
 
-  .audience::after {
-    display: none;
-  }
-
   .proof__head {
     flex-direction: column;
     gap: 32px;
@@ -2194,55 +2307,94 @@ h1, h2, h3, .faq__q {
     border-radius: 24px;
   }
 
-  /* Ländervergleich: Kriterium als Zeilentitel, darunter die drei Länder */
+  /* Ländervergleich: eine Karte je Kriterium, die Schweiz hervorgehoben */
   .ctable-wrap::before {
     display: none;
   }
 
   .ctable,
-  .ctable thead,
-  .ctable tbody {
+  .ctable tbody,
+  .ctable tbody tr {
     display: block;
   }
 
-  .ctable tr {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    column-gap: 12px;
+  .ctable thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
   }
 
-  .ctable thead td {
-    display: none;
-  }
-
-  .ctable thead th,
-  .ctable tbody th,
-  .ctable tbody td,
-  .ctable tbody .is-ch,
-  .ctable tbody tr:last-child > *,
-  .ctable tbody tr:last-child .is-ch {
-    height: auto;
-    padding: 0 0 14px;
-    border: 0;
-    background: none;
-  }
-
-  .ctable thead th {
-    padding-bottom: 10px;
+  .ctable tbody {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
   }
 
   .ctable tbody tr {
+    padding: 20px;
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    background: var(--white);
+  }
+
+  .ctable tbody tr > th[scope="row"],
+  .ctable tbody tr:last-child > th[scope="row"] {
+    display: block;
+    height: auto;
+    padding: 0 0 14px;
+    border: 0;
+    font-family: var(--font-display);
+    font-size: 18px;
+    line-height: 26px;
+    font-weight: 600;
+    letter-spacing: -0.09px;
+    color: var(--text-primary);
+  }
+
+  .ctable tbody td,
+  .ctable tbody .is-ch,
+  .ctable tbody tr:last-child > td,
+  .ctable tbody tr:last-child .is-ch {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 16px;
+    height: auto;
+    padding: 12px 14px;
+    border: 0;
+    background: none;
+    font-size: 14px;
+    line-height: 22px;
+    text-align: right;
+  }
+
+  .ctable tbody td::before {
+    content: attr(data-label);
+    flex: none;
+    font-weight: 400;
+    color: var(--text-secondary);
+    text-align: left;
+  }
+
+  .ctable tbody td + td + td {
     border-top: 1px solid var(--border);
   }
 
-  .ctable tbody tr:last-child {
-    border-bottom: 1px solid var(--border);
+  .ctable tbody .is-ch,
+  .ctable tbody tr:last-child .is-ch {
+    margin-bottom: 4px;
+    border-radius: 12px;
+    background: var(--blue-50);
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 600;
   }
 
-  .ctable tbody tr > th[scope="row"] {
-    grid-column: 1 / -1;
-    padding: 14px 0 4px;
+  .ctable tbody .is-ch::before {
     font-weight: 500;
+    color: var(--text-brand);
   }
 
   /* Nachweise untereinander */
@@ -2454,12 +2606,176 @@ h1, h2, h3, .faq__q {
   }
 }
 
+/* ==========================================================================
+   Bewegung
+   ========================================================================== */
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes step-forward {
+  from {
+    opacity: 0;
+    transform: translateX(12px);
+  }
+}
+
+@keyframes step-back {
+  from {
+    opacity: 0;
+    transform: translateX(-12px);
+  }
+}
+
+@keyframes audience-loop {
+  to {
+    transform: translateY(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  /* Hero und Kennzahlen beim Laden */
+  .hero__content > *,
+  .hero__photo,
+  .stat {
+    animation: rise 700ms var(--ease-out) both;
+  }
+
+  .hero__content > :nth-child(2) {
+    animation-delay: 70ms;
+  }
+
+  .hero__content > :nth-child(3) {
+    animation-delay: 140ms;
+  }
+
+  .hero__photo {
+    animation-delay: 120ms;
+  }
+
+  .hero-stat,
+  .hero-expert {
+    animation: rise 600ms var(--ease-out) both;
+    animation-delay: 480ms;
+  }
+
+  .hero-expert {
+    animation-delay: 580ms;
+  }
+
+  .stat:nth-child(1) {
+    animation-delay: 300ms;
+  }
+
+  .stat:nth-child(2) {
+    animation-delay: 370ms;
+  }
+
+  .stat:nth-child(3) {
+    animation-delay: 440ms;
+  }
+
+  /* Einblenden beim Scrollen, einmalig */
+  .reveal-on [data-reveal] {
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity 600ms var(--ease-out), transform 600ms var(--ease-out);
+    transition-delay: var(--reveal-delay, 0ms);
+  }
+
+  .reveal-on [data-reveal].is-visible {
+    opacity: 1;
+    transform: none;
+  }
+
+  /* Schrittwechsel im Formular */
+  .lead-form.is-stepped [data-step].is-active {
+    animation: step-forward 240ms var(--ease-out) both;
+  }
+
+  .lead-form.is-stepped[data-dir="back"] [data-step].is-active {
+    animation-name: step-back;
+  }
+
+  .btn:active {
+    transform: scale(0.97);
+  }
+}
+
+/* «Für wen»: Karten laufen durch, nur neben der Headline und ohne reduzierte Bewegung */
+@media (min-width: 981px) and (prefers-reduced-motion: no-preference) {
+  .audience.has-clone {
+    height: 704px;
+    overflow: hidden;
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 56px, #000 calc(100% - 72px), transparent 100%);
+    mask-image: linear-gradient(to bottom, transparent 0, #000 56px, #000 calc(100% - 72px), transparent 100%);
+  }
+
+  .audience.has-clone .audience__set {
+    padding-bottom: 24px;
+  }
+
+  .audience.has-clone .audience__set[aria-hidden="true"] {
+    display: flex;
+  }
+
+  .audience.has-clone .audience__track {
+    animation: audience-loop 40s linear infinite;
+  }
+
+  .audience.has-clone:focus-within .audience__track {
+    animation-play-state: paused;
+  }
+}
+
+@media (min-width: 981px) and (prefers-reduced-motion: no-preference) and (hover: hover) and (pointer: fine) {
+  .audience.has-clone:hover .audience__track {
+    animation-play-state: paused;
+  }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .form-nav__back:hover {
+    color: var(--text-primary);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
   }
 
-  * {
-    transition: none !important;
+  /* Nur weich einblenden, keine Verschiebung */
+  .reveal-on [data-reveal] {
+    opacity: 0;
+    transition: opacity 300ms ease;
+  }
+
+  .reveal-on [data-reveal].is-visible {
+    opacity: 1;
+  }
+
+  .lead-form.is-stepped [data-step].is-active {
+    animation: fade 200ms ease both;
+  }
+
+  .btn__arrow,
+  .btn {
+    transition: background-color 0.18s ease;
+  }
+
+  .btn:hover .btn__arrow,
+  .btn:active {
+    transform: none;
   }
 }

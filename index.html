@@ -16,6 +16,12 @@
     <link rel="stylesheet" href="https://use.typekit.net/KIT-ID.css">
   -->
 
+  <script>
+    (function (d) {
+      d.classList.add("reveal-on");
+      setTimeout(function () { if (!window.__ugReady) d.classList.remove("reveal-on"); }, 3000);
+    })(document.documentElement);
+  </script>
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body id="top">
@@ -109,38 +115,38 @@
     <!-- Vorteile -->
     <section class="section section--subtle" id="vorteile">
       <div class="container stack-56">
-        <div class="section-head">
+        <div class="section-head" data-reveal>
           <p class="eyebrow">Vorteile</p>
           <h2>Das eröffnet Ihnen ein <span class="hl">Schweizer Unternehmen</span></h2>
         </div>
 
         <div class="grid-3 benefits">
-          <article class="card">
+          <article class="card" data-reveal>
             <img class="card__icon" src="assets/icons/vorteil-markt.svg" width="26" height="26" alt="">
             <h3>Zugang zum Schweizer Markt</h3>
             <p>Schweizer Kunden und Behörden arbeiten bevorzugt mit Unternehmen, die hier ihren Sitz haben. Mit einer eigenen Gesellschaft bieten Sie bei Ausschreibungen mit und stellen Ihre Rechnungen in Franken.</p>
           </article>
-          <article class="card">
+          <article class="card" data-reveal>
             <img class="card__icon" src="assets/icons/vorteil-vertrauen.svg" width="26" height="26" alt="">
             <h3>Ein Standort, dem Kunden vertrauen</h3>
             <p>Auf Ihren Rechnungen steht eine GmbH oder AG mit Schweizer Adresse. Geschäftspartner und Banken auf der ganzen Welt kennen diesen Standort.</p>
           </article>
-          <article class="card">
+          <article class="card" data-reveal>
             <img class="card__icon" src="assets/icons/vorteil-steuern.svg" width="26" height="26" alt="">
             <h3>Tiefe Unternehmenssteuern</h3>
             <p>In Zug und Luzern zahlt ein Unternehmen rund 11,7&nbsp;% Steuern auf den Gewinn. In Deutschland sind es rund 30&nbsp;%, in Österreich 23&nbsp;%.</p>
           </article>
-          <article class="card">
+          <article class="card" data-reveal>
             <img class="card__icon" src="assets/icons/vorteil-mwst.svg" width="26" height="26" alt="">
             <h3>8,1&nbsp;% Mehrwertsteuer</h3>
             <p>Der Schweizer Normalsatz liegt bei 8,1&nbsp;%. Deutschland erhebt 19&nbsp;%, Österreich 20&nbsp;%.</p>
           </article>
-          <article class="card">
+          <article class="card" data-reveal>
             <img class="card__icon" src="assets/icons/bank.svg" width="26" height="26" alt="">
             <h3>Franken und Schweizer Banken</h3>
             <p>Ihr Unternehmen hält seine Liquidität in einer der stabilsten Währungen der Welt. Das Kapital können Sie auch in Euro oder Dollar führen.</p>
           </article>
-          <article class="card">
+          <article class="card" data-reveal>
             <img class="card__icon" src="assets/icons/vorteil-recht.svg" width="26" height="26" alt="">
             <h3>Stabile Politik und planbares Recht</h3>
             <p>Die Schweiz belegt 2026 erneut Platz 1 im weltweiten Innovationsindex. Steuerfragen lassen sich hier vorab verbindlich mit der Behörde klären.</p>
@@ -148,8 +154,8 @@
         </div>
 
         <div class="country-compare">
-          <h3 class="h3">Die Schweiz im Vergleich</h3>
-          <div class="ctable-wrap">
+          <h3 class="h3" data-reveal>Die Schweiz im Vergleich</h3>
+          <div class="ctable-wrap" data-reveal>
             <table class="ctable">
               <thead>
                 <tr>
@@ -162,32 +168,32 @@
               <tbody>
                 <tr>
                   <th scope="row">Steuern auf den Unternehmensgewinn</th>
-                  <td class="is-ch">rund 11,7&nbsp;% in Zug</td>
-                  <td>rund 30&nbsp;%</td>
-                  <td>23&nbsp;%</td>
+                  <td class="is-ch" data-label="Schweiz">rund 11,7&nbsp;% in Zug</td>
+                  <td data-label="Deutschland">rund 30&nbsp;%</td>
+                  <td data-label="Österreich">23&nbsp;%</td>
                 </tr>
                 <tr>
                   <th scope="row">Mehrwertsteuer, Normalsatz</th>
-                  <td class="is-ch">8,1&nbsp;%</td>
-                  <td>19&nbsp;%</td>
-                  <td>20&nbsp;%</td>
+                  <td class="is-ch" data-label="Schweiz">8,1&nbsp;%</td>
+                  <td data-label="Deutschland">19&nbsp;%</td>
+                  <td data-label="Österreich">20&nbsp;%</td>
                 </tr>
                 <tr>
                   <th scope="row">Mindestkapital einer GmbH</th>
-                  <td class="is-ch">CHF&nbsp;20’000</td>
-                  <td>EUR&nbsp;25’000</td>
-                  <td>EUR&nbsp;10’000</td>
+                  <td class="is-ch" data-label="Schweiz">CHF&nbsp;20’000</td>
+                  <td data-label="Deutschland">EUR&nbsp;25’000</td>
+                  <td data-label="Österreich">EUR&nbsp;10’000</td>
                 </tr>
                 <tr>
                   <th scope="row">Kapital in Fremdwährung</th>
-                  <td class="is-ch">möglich</td>
-                  <td>nur in Euro</td>
-                  <td>nur in Euro</td>
+                  <td class="is-ch" data-label="Schweiz">möglich</td>
+                  <td data-label="Deutschland">nur in Euro</td>
+                  <td data-label="Österreich">nur in Euro</td>
                 </tr>
               </tbody>
             </table>
           </div>
-          <a class="btn" href="#beratungstermin">Beratungstermin sichern <span class="btn__arrow" aria-hidden="true">→</span></a>
+          <a class="btn" data-reveal href="#beratungstermin">Beratungstermin sichern <span class="btn__arrow" aria-hidden="true">→</span></a>
         </div>
       </div>
     </section>
@@ -196,7 +202,7 @@
     <section class="proof" id="reviso">
       <div class="proof__glow" aria-hidden="true"><img src="assets/img/glow-nachweise.svg" width="2212.16" height="1220.67" alt=""></div>
       <div class="container stack-56">
-        <div class="proof__head">
+        <div class="proof__head" data-reveal>
           <div class="proof__intro">
             <p class="eyebrow eyebrow--mint">Wer hinter uns steht</p>
             <h2>Hinter unternehmensgründung.ch <br class="br-desktop">steht die <span class="hl hl--mint">Reviso Treuhand AG</span></h2>
@@ -206,7 +212,7 @@
         </div>
 
         <ul class="proof__grid">
-          <li class="proof__item">
+          <li class="proof__item" data-reveal>
             <div class="proof__logo">
               <img src="assets/logos/expertsuisse.svg" width="224" height="51" alt="EXPERTsuisse">
             </div>
@@ -215,7 +221,7 @@
               <p>Der Schweizer Verband der Wirtschaftsprüfer und Treuhandexperten</p>
             </div>
           </li>
-          <li class="proof__item">
+          <li class="proof__item" data-reveal>
             <div class="proof__logo">
               <div class="era-logo" role="img" aria-label="ERA, Eidgenössische Revisionsaufsichtsbehörde">
                 <span style="inset:18.58% 32.33% 73.92% 59.5%"><img src="assets/logos/era-pfad-6.svg" alt=""></span>
@@ -237,7 +243,7 @@
               <p>Zulassung durch die Eidgenössische Revisionsaufsichtsbehörde</p>
             </div>
           </li>
-          <li class="proof__item">
+          <li class="proof__item" data-reveal>
             <div class="proof__logo">
               <div class="stbk-logo" role="img" aria-label="Steuerberaterkammer Südbaden, Körperschaft des öffentlichen Rechts"></div>
             </div>
@@ -253,29 +259,29 @@
     <!-- Hürden -->
     <section class="section section--xl" id="huerden">
       <div class="container split split--hurdles">
-        <div class="split__head">
+        <div class="split__head" data-reveal>
           <p class="eyebrow">Hürden</p>
           <h2 class="h1">Diese Hürden <span class="hl">nehmen wir Ihnen ab</span></h2>
           <a class="btn btn--md" href="#beratungstermin">Beratungstermin sichern <span class="btn__arrow" aria-hidden="true">→</span></a>
         </div>
 
         <div class="grid-2 hurdles">
-          <article class="card card--subtle">
+          <article class="card card--subtle" data-reveal>
             <span class="icon-tile"><img src="assets/icons/huerde-wohnsitz.svg" width="26" height="26" alt=""></span>
             <h3>Kein Wohnsitz in der Schweiz</h3>
             <p>Jede GmbH und jede AG braucht eine zeichnungsberechtigte Person, die in der Schweiz wohnt. Wir stellen diese Person und die Geschäftsadresse.</p>
           </article>
-          <article class="card card--subtle">
+          <article class="card card--subtle" data-reveal>
             <span class="icon-tile"><img src="assets/icons/huerde-notar.svg" width="26" height="26" alt=""></span>
             <h3>Notar und Handelsregister</h3>
             <p>Die Gründung wird öffentlich beurkundet und beim Handelsregister angemeldet. Wir vertreten Sie mit Vollmacht, Sie müssen dafür nicht anreisen.</p>
           </article>
-          <article class="card card--subtle">
+          <article class="card card--subtle" data-reveal>
             <span class="icon-tile"><img src="assets/icons/bank.svg" width="26" height="26" alt=""></span>
             <h3>Das Bankkonto</h3>
             <p>Schweizer Banken prüfen neue Unternehmen genau, besonders bei Inhabern im Ausland. Wir bereiten die Unterlagen vor und stellen den Kontakt zur Bank her.</p>
           </article>
-          <article class="card card--subtle">
+          <article class="card card--subtle" data-reveal>
             <span class="icon-tile"><img src="assets/icons/huerde-rechtsform.svg" width="26" height="26" alt=""></span>
             <h3>GmbH oder AG, Zug oder Zürich</h3>
             <p>Rechtsform und Sitz hängen von Ihrem Vorhaben ab. Unsere Gründungsexperten geben Ihnen eine klare Empfehlung, bevor ein Dokument entsteht.</p>
@@ -287,47 +293,47 @@
     <!-- Leistungen -->
     <section class="section section--services" id="leistungen">
       <div class="container stack-56">
-        <div class="section-head">
+        <div class="section-head" data-reveal>
           <p class="eyebrow">Leistungen</p>
           <h2 class="measure-900">Von den Statuten bis zum Handelsregistereintrag <span class="hl">liegt die Gründung bei uns</span></h2>
         </div>
 
         <ol class="grid-3 steps-cards">
-          <li class="card card--tight">
+          <li class="card card--tight" data-reveal>
             <p class="card__number">01</p>
             <h3>Rechtsform und Kanton</h3>
             <p>Sie erhalten eine klare Empfehlung für GmbH oder AG und für den Sitz, der zu Ihrem Vorhaben passt.</p>
           </li>
-          <li class="card card--tight">
+          <li class="card card--tight" data-reveal>
             <p class="card__number">02</p>
             <h3>Gründungsdokumente</h3>
             <p>Wir erstellen die Statuten und alle weiteren Dokumente für Notar und Handelsregister.</p>
           </li>
-          <li class="card card--tight">
+          <li class="card card--tight" data-reveal>
             <p class="card__number">03</p>
             <h3>Notar und Handelsregister</h3>
             <p>Wir vertreten Sie bei der Beurkundung und melden Ihr Unternehmen beim Handelsregister an.</p>
           </li>
-          <li class="card card--tight">
+          <li class="card card--tight" data-reveal>
             <p class="card__number">04</p>
             <h3>Kapitalkonto und Bankkonto</h3>
             <p>Wir eröffnen mit Ihnen das Kapitaleinzahlungskonto und bereiten das Geschäftskonto vor.</p>
           </li>
-          <li class="card card--tight">
+          <li class="card card--tight" data-reveal>
             <p class="card__number">05</p>
             <h3>Geschäftsadresse</h3>
             <p>Ihr Unternehmen erhält ein Domizil in [Baar oder Zürich]. Ihre Post kommt gescannt per E-Mail.</p>
           </li>
-          <li class="card card--tight">
+          <li class="card card--tight" data-reveal>
             <p class="card__number">06</p>
             <h3>Geschäftsführung mit Schweizer Wohnsitz</h3>
             <p>Wir stellen die Person, die das Gesetz für Ihr Unternehmen verlangt.</p>
           </li>
         </ol>
 
-        <a class="btn" href="#beratungstermin">Beratungstermin sichern <span class="btn__arrow" aria-hidden="true">→</span></a>
+        <a class="btn" data-reveal href="#beratungstermin">Beratungstermin sichern <span class="btn__arrow" aria-hidden="true">→</span></a>
 
-        <div class="after">
+        <div class="after" data-reveal>
           <h2 class="after__title">Nach der Gründung bleiben <br class="br-desktop">wir Ihr Treuhänder</h2>
           <ul class="after__grid">
             <li class="service">
@@ -380,13 +386,13 @@
     <!-- Angebot -->
     <section class="section section--subtle" id="angebot">
       <div class="container stack-56">
-        <div class="section-head">
+        <div class="section-head" data-reveal>
           <p class="eyebrow">Angebot</p>
           <h2 class="measure-900">Sie erhalten ein individuelles Angebot, <span class="hl">passend zu Ihrem Vorhaben</span></h2>
         </div>
 
         <div class="plans">
-          <article class="plan plan--light">
+          <article class="plan plan--light" data-reveal>
             <div class="plan__glow" aria-hidden="true"><img src="assets/img/glow-angebot.svg" width="1526.27" height="1250.72" alt=""></div>
             <div class="plan__body">
               <div class="plan__top">
@@ -404,7 +410,7 @@
             <a class="btn btn--white" href="#beratungstermin">Beratungstermin sichern <span class="btn__arrow" aria-hidden="true">→</span></a>
           </article>
 
-          <article class="plan plan--blue">
+          <article class="plan plan--blue" data-reveal>
             <div class="plan__body">
               <div class="plan__top">
                 <h3 class="plan__title">Gründung aus dem Ausland</h3>
@@ -428,13 +434,13 @@
     <!-- Ablauf -->
     <section class="section" id="ablauf">
       <div class="container stack-56">
-        <div class="section-head">
+        <div class="section-head" data-reveal>
           <p class="eyebrow">Ablauf</p>
           <h2 class="measure-900">In fünf Schritten zum <span class="hl">eingetragenen Unternehmen</span></h2>
         </div>
 
         <ol class="timeline">
-          <li class="step">
+          <li class="step" data-reveal>
             <div class="step__marker"><span class="step__num">1</span><span class="step__line"></span></div>
             <h3>Beratungstermin</h3>
             <div class="step__box">
@@ -442,7 +448,7 @@
               <p>Eine Empfehlung für Rechtsform und Sitz</p>
             </div>
           </li>
-          <li class="step">
+          <li class="step" data-reveal>
             <div class="step__marker"><span class="step__num">2</span><span class="step__line"></span></div>
             <h3>Individuelles Angebot</h3>
             <div class="step__box">
@@ -450,7 +456,7 @@
               <p>Leistungen und Zeitplan schriftlich</p>
             </div>
           </li>
-          <li class="step">
+          <li class="step" data-reveal>
             <div class="step__marker"><span class="step__num">3</span><span class="step__line"></span></div>
             <h3>Unterschrift und Kapital</h3>
             <div class="step__box">
@@ -458,7 +464,7 @@
               <p>Die Dokumente sind beglaubigt unterschrieben, das Kapital ist einbezahlt.</p>
             </div>
           </li>
-          <li class="step">
+          <li class="step" data-reveal>
             <div class="step__marker"><span class="step__num">4</span><span class="step__line"></span></div>
             <h3>Notar und Handelsregister</h3>
             <div class="step__box">
@@ -466,7 +472,7 @@
               <p>Ihr Unternehmen ist eingetragen und handlungsfähig.</p>
             </div>
           </li>
-          <li class="step step--final">
+          <li class="step step--final" data-reveal>
             <div class="step__marker"><span class="step__num">5</span><span class="step__line"></span></div>
             <h3>Start</h3>
             <div class="step__box">
@@ -476,35 +482,39 @@
           </li>
         </ol>
 
-        <a class="btn" href="#beratungstermin">Beratungstermin sichern <span class="btn__arrow" aria-hidden="true">→</span></a>
+        <a class="btn" data-reveal href="#beratungstermin">Beratungstermin sichern <span class="btn__arrow" aria-hidden="true">→</span></a>
       </div>
     </section>
 
     <!-- Für wen -->
     <section class="section section--subtle section--sm" id="fuer-wen">
       <div class="container split split--audience">
-        <div class="section-head split__head">
+        <div class="section-head split__head" data-reveal>
           <p class="eyebrow">Für wen</p>
           <h2>Für Unternehmer, die <span class="hl">in der Schweiz</span> gründen wollen</h2>
         </div>
 
-        <div class="audience">
-          <article class="card card--row">
-            <h3>Zuzug in die Schweiz</h3>
-            <p>Sie ziehen in die Schweiz und führen Ihr Geschäft hier weiter. Ihr Unternehmen steht, bevor Sie ankommen.</p>
-          </article>
-          <article class="card card--row">
-            <h3>Schweizer Unternehmen ohne Umzug</h3>
-            <p>Sie wohnen in Deutschland oder Österreich und brauchen eine Gesellschaft in der Schweiz. Wir stellen die Geschäftsadresse und die Geschäftsführung.</p>
-          </article>
-          <article class="card card--row">
-            <h3>Zweite Gesellschaft oder Holding</h3>
-            <p>Sie führen bereits ein Unternehmen und gründen eine Tochtergesellschaft oder eine Holding.</p>
-          </article>
-          <article class="card card--row">
-            <h3>Projekt mit Partnern</h3>
-            <p>Sie starten mit Partnern und brauchen das Unternehmen bis zu einem festen Termin.</p>
-          </article>
+        <div class="audience" data-reveal data-loop>
+          <div class="audience__track">
+            <div class="audience__set">
+              <article class="card card--row">
+                <h3>Zuzug in die Schweiz</h3>
+                <p>Sie ziehen in die Schweiz und führen Ihr Geschäft hier weiter. Ihr Unternehmen steht, bevor Sie ankommen.</p>
+              </article>
+              <article class="card card--row">
+                <h3>Schweizer Unternehmen ohne Umzug</h3>
+                <p>Sie wohnen in Deutschland oder Österreich und brauchen eine Gesellschaft in der Schweiz. Wir stellen die Geschäftsadresse und die Geschäftsführung.</p>
+              </article>
+              <article class="card card--row">
+                <h3>Zweite Gesellschaft oder Holding</h3>
+                <p>Sie führen bereits ein Unternehmen und gründen eine Tochtergesellschaft oder eine Holding.</p>
+              </article>
+              <article class="card card--row">
+                <h3>Projekt mit Partnern</h3>
+                <p>Sie starten mit Partnern und brauchen das Unternehmen bis zu einem festen Termin.</p>
+              </article>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -512,12 +522,12 @@
     <!-- Vergleich -->
     <section class="section" id="vergleich">
       <div class="container stack-56">
-        <div class="section-head">
+        <div class="section-head" data-reveal>
           <p class="eyebrow">Vergleich</p>
           <h2 class="measure-900">Online-Plattform oder Gründung <br class="br-desktop">mit <span class="hl">persönlicher Beratung?</span></h2>
         </div>
 
-        <div class="versus" role="table" aria-label="Online-Plattform und unternehmensgründung.ch im Vergleich">
+        <div class="versus" data-reveal role="table" aria-label="Online-Plattform und unternehmensgründung.ch im Vergleich">
           <div class="versus__row versus__row--head" role="row">
             <div class="versus__crit" role="columnheader"><span class="sr-only">Kriterium</span></div>
             <div class="versus__other" role="columnheader">Online-Plattform</div>
@@ -600,7 +610,7 @@
           </div>
         </div>
 
-        <div class="versus-close">
+        <div class="versus-close" data-reveal>
           <p>Bei uns sprechen Sie mit einem Gründungsexperten, bevor ein Dokument entsteht. Nach dem Eintrag betreut dasselbe Team Ihr Unternehmen weiter.</p>
           <a class="btn" href="#beratungstermin">Beratungstermin sichern <span class="btn__arrow" aria-hidden="true">→</span></a>
         </div>
@@ -610,13 +620,13 @@
     <!-- Aus der Praxis -->
     <section class="section section--subtle section--xl" id="praxis">
       <div class="container stack-56">
-        <div class="section-head">
+        <div class="section-head" data-reveal>
           <p class="eyebrow">Aus der Praxis</p>
           <h2 class="measure-900">So haben andere Unternehmer <span class="hl">mit uns gegründet</span></h2>
         </div>
 
         <div class="cases">
-          <article class="case">
+          <article class="case" data-reveal>
             <div class="case__head">
               <div class="case__photo" aria-hidden="true"></div>
               <h3>[Dienstleister aus Österreich]</h3>
@@ -635,7 +645,7 @@
             </div>
           </article>
 
-          <article class="case">
+          <article class="case" data-reveal>
             <div class="case__head">
               <div class="case__photo" aria-hidden="true"></div>
               <h3>[Projektgesellschaft mit vier Partnern]</h3>
@@ -660,7 +670,7 @@
     <!-- FAQ -->
     <section class="section section--xl" id="faq">
       <div class="container split split--faq">
-        <div class="split__head">
+        <div class="split__head" data-reveal>
           <p class="eyebrow">FAQ</p>
           <h2>Häufige Fragen zur Unternehmensgründung <span class="hl">in der Schweiz</span></h2>
           <p class="body">Ihre Frage ist nicht dabei? Im Beratungstermin klären wir alles, was Ihr Vorhaben betrifft.</p>
@@ -668,43 +678,43 @@
         </div>
 
         <div class="faq-list">
-          <details class="faq" name="faq" open>
+          <details class="faq" data-reveal name="faq" open>
             <summary><span class="faq__q">Was kostet der Beratungstermin?</span><img class="faq__chev faq__chev--down" src="assets/icons/chevron-down.svg" width="24" height="24" alt=""><img class="faq__chev faq__chev--up" src="assets/icons/chevron-up.svg" width="24" height="24" alt=""></summary>
             <p class="faq__a">Nichts. Der Termin ist kostenlos und verpflichtet Sie zu nichts.</p>
           </details>
-          <details class="faq" name="faq">
+          <details class="faq" data-reveal name="faq">
             <summary><span class="faq__q">Was kostet die Gründung?</span><img class="faq__chev faq__chev--down" src="assets/icons/chevron-down.svg" width="24" height="24" alt=""><img class="faq__chev faq__chev--up" src="assets/icons/chevron-up.svg" width="24" height="24" alt=""></summary>
             <p class="faq__a">Das hängt von der Rechtsform ab und von den Leistungen, die Sie brauchen. Nach dem Beratungstermin erhalten Sie ein individuelles Angebot.</p>
           </details>
-          <details class="faq" name="faq">
+          <details class="faq" data-reveal name="faq">
             <summary><span class="faq__q">Muss ich in der Schweiz wohnen?</span><img class="faq__chev faq__chev--down" src="assets/icons/chevron-down.svg" width="24" height="24" alt=""><img class="faq__chev faq__chev--up" src="assets/icons/chevron-up.svg" width="24" height="24" alt=""></summary>
             <p class="faq__a">Nein. Das Gesetz verlangt eine zeichnungsberechtigte Person mit Wohnsitz in der Schweiz (Art. 718 Abs. 4 und 814 Abs. 3 OR). Diese Person und die Geschäftsadresse stellen wir.</p>
           </details>
-          <details class="faq" name="faq">
+          <details class="faq" data-reveal name="faq">
             <summary><span class="faq__q">Muss ich für die Gründung in die Schweiz reisen?</span><img class="faq__chev faq__chev--down" src="assets/icons/chevron-down.svg" width="24" height="24" alt=""><img class="faq__chev faq__chev--up" src="assets/icons/chevron-up.svg" width="24" height="24" alt=""></summary>
             <p class="faq__a">Nein. Beim Notar vertreten wir Sie mit Vollmacht. Ihre Unterschrift lassen Sie an Ihrem Wohnort beglaubigen.</p>
           </details>
-          <details class="faq" name="faq">
+          <details class="faq" data-reveal name="faq">
             <summary><span class="faq__q">GmbH oder AG, was passt zu mir?</span><img class="faq__chev faq__chev--down" src="assets/icons/chevron-down.svg" width="24" height="24" alt=""><img class="faq__chev faq__chev--up" src="assets/icons/chevron-up.svg" width="24" height="24" alt=""></summary>
             <p class="faq__a">Eine GmbH gründen Sie mit CHF&nbsp;20’000. Für die AG braucht es CHF&nbsp;100’000, von denen mindestens CHF&nbsp;50’000 einbezahlt sind. Die Inhaber einer GmbH stehen im Handelsregister, Aktionäre nicht. Im Beratungstermin erhalten Sie eine Empfehlung.</p>
           </details>
-          <details class="faq" name="faq">
+          <details class="faq" data-reveal name="faq">
             <summary><span class="faq__q">Kann ich das Kapital nach der Gründung verwenden?</span><img class="faq__chev faq__chev--down" src="assets/icons/chevron-down.svg" width="24" height="24" alt=""><img class="faq__chev faq__chev--up" src="assets/icons/chevron-up.svg" width="24" height="24" alt=""></summary>
             <p class="faq__a">Ja. Nach dem Eintrag gibt die Bank das Kapital frei. Ihr Unternehmen arbeitet damit.</p>
           </details>
-          <details class="faq" name="faq">
+          <details class="faq" data-reveal name="faq">
             <summary><span class="faq__q">Kann mein bestehendes Unternehmen Gesellschafter werden?</span><img class="faq__chev faq__chev--down" src="assets/icons/chevron-down.svg" width="24" height="24" alt=""><img class="faq__chev faq__chev--up" src="assets/icons/chevron-up.svg" width="24" height="24" alt=""></summary>
             <p class="faq__a">Ja. Anteile an einer Schweizer GmbH oder AG kann auch eine Gesellschaft halten, zum Beispiel Ihre GmbH in Deutschland oder Österreich.</p>
           </details>
-          <details class="faq" name="faq">
+          <details class="faq" data-reveal name="faq">
             <summary><span class="faq__q">Wie lange dauert die Gründung?</span><img class="faq__chev faq__chev--down" src="assets/icons/chevron-down.svg" width="24" height="24" alt=""><img class="faq__chev faq__chev--up" src="assets/icons/chevron-up.svg" width="24" height="24" alt=""></summary>
             <p class="faq__a">Ab vollständigen Unterlagen und einbezahltem Kapital rechnen wir mit [2 bis 3 Wochen] bis zum Eintrag im Handelsregister.</p>
           </details>
-          <details class="faq" name="faq">
+          <details class="faq" data-reveal name="faq">
             <summary><span class="faq__q">Erkennt das Finanzamt in Deutschland oder Österreich mein Schweizer Unternehmen an?</span><img class="faq__chev faq__chev--down" src="assets/icons/chevron-down.svg" width="24" height="24" alt=""><img class="faq__chev faq__chev--up" src="assets/icons/chevron-up.svg" width="24" height="24" alt=""></summary>
             <p class="faq__a">Ja, wenn Ihr Unternehmen in der Schweiz tatsächlich geführt wird. Wie Sie das richtig aufsetzen, klären wir im Beratungstermin.</p>
           </details>
-          <details class="faq" name="faq">
+          <details class="faq" data-reveal name="faq">
             <summary><span class="faq__q">Bin ich nach der Gründung an Sie gebunden?</span><img class="faq__chev faq__chev--down" src="assets/icons/chevron-down.svg" width="24" height="24" alt=""><img class="faq__chev faq__chev--up" src="assets/icons/chevron-up.svg" width="24" height="24" alt=""></summary>
             <p class="faq__a">Nein. Die laufenden Leistungen buchen Sie einzeln und kündigen sie mit einer Frist von [Kündigungsfrist].</p>
           </details>
@@ -718,7 +728,7 @@
       <div class="cta__bloom cta__bloom--2" aria-hidden="true"></div>
 
       <div class="container split split--cta">
-        <div class="cta__content">
+        <div class="cta__content" data-reveal>
           <p class="eyebrow eyebrow--mint">Beratungstermin</p>
           <h2 class="h1">Sichern Sie sich Ihren <span class="hl hl--mint">Beratungstermin</span></h2>
           <p class="body-lg">Schildern Sie uns kurz Ihr Vorhaben. Ein Gründungsexperte aus unserem Team meldet sich schnellstmöglich bei Ihnen.</p>
@@ -735,69 +745,91 @@
           </div>
         </div>
 
-        <form class="lead-form" name="beratungstermin" method="POST" data-netlify="true" netlify-honeypot="bot-field" data-lead-form>
+        <form class="lead-form" name="beratungstermin" method="POST" data-netlify="true" netlify-honeypot="bot-field" data-reveal data-lead-form>
           <input type="hidden" name="form-name" value="beratungstermin">
           <p class="sr-only"><label>Dieses Feld bitte leer lassen <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
 
-          <fieldset class="field-group">
-            <legend>Wo wohnen Sie heute?</legend>
-            <div class="chips">
-              <label class="chip"><input type="radio" name="wohnsitz" value="Schweiz" required><span class="chip__check"><img src="assets/icons/check-10-8.svg" width="10.8" height="10.8" alt=""></span>Schweiz</label>
-              <label class="chip"><input type="radio" name="wohnsitz" value="Deutschland"><span class="chip__check"><img src="assets/icons/check-10-8.svg" width="10.8" height="10.8" alt=""></span>Deutschland</label>
-              <label class="chip"><input type="radio" name="wohnsitz" value="Österreich"><span class="chip__check"><img src="assets/icons/check-10-8.svg" width="10.8" height="10.8" alt=""></span>Österreich</label>
-              <label class="chip"><input type="radio" name="wohnsitz" value="Anderes Land"><span class="chip__check"><img src="assets/icons/check-10-8.svg" width="10.8" height="10.8" alt=""></span>Anderes Land</label>
-            </div>
-          </fieldset>
-
-          <fieldset class="field-group">
-            <legend>Was beschreibt Ihre Lage am besten?</legend>
-            <div class="chips">
-              <label class="chip"><input type="radio" name="lage" value="Ich führe bereits ein Unternehmen" required><span class="chip__check"><img src="assets/icons/check-10-8.svg" width="10.8" height="10.8" alt=""></span>Ich führe bereits ein Unternehmen</label>
-              <label class="chip"><input type="radio" name="lage" value="Ich bin selbstständig"><span class="chip__check"><img src="assets/icons/check-10-8.svg" width="10.8" height="10.8" alt=""></span>Ich bin selbstständig</label>
-              <label class="chip"><input type="radio" name="lage" value="Ich bin angestellt und mache mich selbstständig"><span class="chip__check"><img src="assets/icons/check-10-8.svg" width="10.8" height="10.8" alt=""></span>Ich bin angestellt und mache mich selbstständig</label>
-              <label class="chip"><input type="radio" name="lage" value="Ich habe eine Geschäftsidee"><span class="chip__check"><img src="assets/icons/check-10-8.svg" width="10.8" height="10.8" alt=""></span>Ich habe eine Geschäftsidee</label>
-            </div>
-          </fieldset>
-
-          <fieldset class="field-group">
-            <legend>Wann soll Ihr Unternehmen eingetragen sein?</legend>
-            <div class="chips">
-              <label class="chip"><input type="radio" name="zeitpunkt" value="So schnell wie möglich" required><span class="chip__check"><img src="assets/icons/check-10-8.svg" width="10.8" height="10.8" alt=""></span>So schnell wie möglich</label>
-              <label class="chip"><input type="radio" name="zeitpunkt" value="In 1 bis 3 Monaten"><span class="chip__check"><img src="assets/icons/check-10-8.svg" width="10.8" height="10.8" alt=""></span>In 1 bis 3 Monaten</label>
-              <label class="chip"><input type="radio" name="zeitpunkt" value="In 3 bis 6 Monaten"><span class="chip__check"><img src="assets/icons/check-10-8.svg" width="10.8" height="10.8" alt=""></span>In 3 bis 6 Monaten</label>
-              <label class="chip"><input type="radio" name="zeitpunkt" value="Ich informiere mich erst"><span class="chip__check"><img src="assets/icons/check-10-8.svg" width="10.8" height="10.8" alt=""></span>Ich informiere mich erst</label>
-            </div>
-          </fieldset>
-
-          <fieldset class="field-group">
-            <legend>Steht das Gründungskapital von mindestens CHF&nbsp;20’000 bereit?</legend>
-            <div class="chips">
-              <label class="chip"><input type="radio" name="kapital" value="Ja" required><span class="chip__check"><img src="assets/icons/check-10-8.svg" width="10.8" height="10.8" alt=""></span>Ja</label>
-              <label class="chip"><input type="radio" name="kapital" value="In den nächsten Wochen"><span class="chip__check"><img src="assets/icons/check-10-8.svg" width="10.8" height="10.8" alt=""></span>In den nächsten Wochen</label>
-              <label class="chip"><input type="radio" name="kapital" value="Nein"><span class="chip__check"><img src="assets/icons/check-10-8.svg" width="10.8" height="10.8" alt=""></span>Nein</label>
-            </div>
-          </fieldset>
-
-          <div class="contact-fields">
-            <label class="input">
-              <span class="input__label">Vorname und Name</span>
-              <input type="text" name="name" placeholder="z. B. Anna Muster" autocomplete="name" required>
-            </label>
-            <label class="input">
-              <span class="input__label">E-Mail</span>
-              <input type="email" name="email" placeholder="name@firma.de" autocomplete="email" required>
-            </label>
-            <label class="input">
-              <span class="input__label">Telefon</span>
-              <input type="tel" name="telefon" placeholder="+49 …" autocomplete="tel" required>
-            </label>
+          <div class="form-progress">
+            <div class="form-progress__bars" aria-hidden="true" data-form-bars><span class="is-done"></span><span></span><span></span><span></span></div>
+            <p class="caption caption--muted" aria-live="polite" data-form-count>Schritt 1 von 4</p>
           </div>
 
-          <button class="btn btn--block" type="submit">Beratungstermin sichern <span class="btn__arrow" aria-hidden="true">→</span></button>
+          <div class="form-steps">
+            <fieldset class="field-group form-step is-active" data-step>
+              <legend>Wo wohnen Sie heute?</legend>
+              <div class="chips">
+                <label class="chip"><input type="radio" name="wohnsitz" value="Schweiz" required><span class="chip__check"><img src="assets/icons/check-10-8.svg" width="10.8" height="10.8" alt=""></span>Schweiz</label>
+                <label class="chip"><input type="radio" name="wohnsitz" value="Deutschland"><span class="chip__check"><img src="assets/icons/check-10-8.svg" width="10.8" height="10.8" alt=""></span>Deutschland</label>
+                <label class="chip"><input type="radio" name="wohnsitz" value="Österreich"><span class="chip__check"><img src="assets/icons/check-10-8.svg" width="10.8" height="10.8" alt=""></span>Österreich</label>
+                <label class="chip"><input type="radio" name="wohnsitz" value="Anderes Land"><span class="chip__check"><img src="assets/icons/check-10-8.svg" width="10.8" height="10.8" alt=""></span>Anderes Land</label>
+              </div>
+            </fieldset>
 
-          <p class="lead-form__error" role="alert" hidden data-form-error>Ihre Anfrage konnte nicht gesendet werden. Bitte versuchen Sie es noch einmal.</p>
+            <fieldset class="field-group form-step" data-step>
+              <legend>Was beschreibt Ihre Lage am besten?</legend>
+              <div class="chips">
+                <label class="chip"><input type="radio" name="lage" value="Ich führe bereits ein Unternehmen" required><span class="chip__check"><img src="assets/icons/check-10-8.svg" width="10.8" height="10.8" alt=""></span>Ich führe bereits ein Unternehmen</label>
+                <label class="chip"><input type="radio" name="lage" value="Ich bin selbstständig"><span class="chip__check"><img src="assets/icons/check-10-8.svg" width="10.8" height="10.8" alt=""></span>Ich bin selbstständig</label>
+                <label class="chip"><input type="radio" name="lage" value="Ich bin angestellt und mache mich selbstständig"><span class="chip__check"><img src="assets/icons/check-10-8.svg" width="10.8" height="10.8" alt=""></span>Ich bin angestellt und mache mich selbstständig</label>
+                <label class="chip"><input type="radio" name="lage" value="Ich habe eine Geschäftsidee"><span class="chip__check"><img src="assets/icons/check-10-8.svg" width="10.8" height="10.8" alt=""></span>Ich habe eine Geschäftsidee</label>
+              </div>
+            </fieldset>
 
-          <p class="lead-form__note"><span class="check-dot check-dot--sm"><img src="assets/icons/check-10-8.svg" width="10.8" height="10.8" alt=""></span>Kostenlos und unverbindlich</p>
+            <fieldset class="field-group form-step" data-step>
+              <legend>Wann soll Ihr Unternehmen eingetragen sein?</legend>
+              <div class="chips">
+                <label class="chip"><input type="radio" name="zeitpunkt" value="So schnell wie möglich" required><span class="chip__check"><img src="assets/icons/check-10-8.svg" width="10.8" height="10.8" alt=""></span>So schnell wie möglich</label>
+                <label class="chip"><input type="radio" name="zeitpunkt" value="In 1 bis 3 Monaten"><span class="chip__check"><img src="assets/icons/check-10-8.svg" width="10.8" height="10.8" alt=""></span>In 1 bis 3 Monaten</label>
+                <label class="chip"><input type="radio" name="zeitpunkt" value="In 3 bis 6 Monaten"><span class="chip__check"><img src="assets/icons/check-10-8.svg" width="10.8" height="10.8" alt=""></span>In 3 bis 6 Monaten</label>
+                <label class="chip"><input type="radio" name="zeitpunkt" value="Ich informiere mich erst"><span class="chip__check"><img src="assets/icons/check-10-8.svg" width="10.8" height="10.8" alt=""></span>Ich informiere mich erst</label>
+              </div>
+            </fieldset>
+
+            <div class="form-step form-step--contact" data-step>
+              <div class="contact-fields">
+                <label class="input">
+                  <span class="input__label">Vorname und Name</span>
+                  <input type="text" name="name" placeholder="z. B. Anna Muster" autocomplete="name" required>
+                </label>
+                <label class="input">
+                  <span class="input__label">E-Mail</span>
+                  <input type="email" name="email" placeholder="name@firma.de" autocomplete="email" required>
+                </label>
+                <div class="input">
+                  <label class="input__label" for="telefon">Telefon</label>
+                  <div class="phone">
+                    <select class="phone__code" name="vorwahl" aria-label="Ländervorwahl" autocomplete="tel-country-code" data-phone-code>
+                      <option value="+41">CH +41</option>
+                      <option value="+49" selected>DE +49</option>
+                      <option value="+43">AT +43</option>
+                      <option value="+423">LI +423</option>
+                      <option value="+33">FR +33</option>
+                      <option value="+39">IT +39</option>
+                      <option value="+31">NL +31</option>
+                      <option value="+32">BE +32</option>
+                      <option value="+352">LU +352</option>
+                      <option value="+44">GB +44</option>
+                      <option value="+34">ES +34</option>
+                      <option value="+48">PL +48</option>
+                      <option value="+1">US +1</option>
+                    </select>
+                    <input id="telefon" type="tel" name="telefon" inputmode="numeric" autocomplete="tel-national" pattern="[0-9 ]{5,20}" placeholder="170 1234567" required data-phone-number>
+                  </div>
+                </div>
+              </div>
+
+              <button class="btn btn--block" type="submit">Beratungstermin sichern <span class="btn__arrow" aria-hidden="true">→</span></button>
+
+              <p class="lead-form__error" role="alert" hidden data-form-error>Ihre Anfrage konnte nicht gesendet werden. Bitte versuchen Sie es noch einmal.</p>
+
+              <p class="lead-form__note"><span class="check-dot check-dot--sm"><img src="assets/icons/check-10-8.svg" width="10.8" height="10.8" alt=""></span>Kostenlos und unverbindlich</p>
+            </div>
+          </div>
+
+          <div class="form-nav">
+            <button class="form-nav__back" type="button" hidden data-form-back>Zurück</button>
+            <button class="btn btn--md form-nav__next" type="button" disabled data-form-next>Weiter <span class="btn__arrow" aria-hidden="true">→</span></button>
+          </div>
         </form>
 
         <div class="lead-form lead-form--done" role="status" hidden data-form-success tabindex="-1">
