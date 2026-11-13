@@ -1,4 +1,4 @@
-// Kopfzeile: Schatten, sobald die Seite gescrollt ist
+// Kopfzeile auf dem Handy: Schatten, sobald die Seite gescrollt ist
 (function () {
   var header = document.querySelector("[data-header]");
   if (!header) return;

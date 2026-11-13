@@ -88,7 +88,7 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 124px;
+  scroll-padding-top: 24px;
   -webkit-text-size-adjust: 100%;
 }
 
@@ -383,7 +383,7 @@ h1, h2, h3, .faq__q {
 /* ---------- Kopfzeile ---------- */
 
 .site-header {
-  position: fixed;
+  position: absolute;
   top: var(--header-top);
   left: 0;
   right: 0;
@@ -405,11 +405,6 @@ h1, h2, h3, .faq__q {
   border-bottom: 1px solid var(--border);
   border-radius: 46px;
   overflow: clip;
-  transition: box-shadow 0.25s ease;
-}
-
-.site-header.is-scrolled .site-header__bar {
-  box-shadow: 0 10px 30px rgba(3, 13, 77, 0.1);
 }
 
 .site-nav {
@@ -2018,10 +2013,6 @@ h1, h2, h3, .faq__q {
     --header-top: 12px;
   }
 
-  html {
-    scroll-padding-top: 96px;
-  }
-
   .br-desktop {
     display: none;
   }
@@ -2136,6 +2127,23 @@ h1, h2, h3, .faq__q {
 }
 
 @media (max-width: 720px) {
+  /* Auf dem Handy bleibt der Button beim Scrollen erreichbar */
+  html {
+    scroll-padding-top: 96px;
+  }
+
+  .site-header {
+    position: fixed;
+  }
+
+  .site-header__bar {
+    transition: box-shadow 0.25s ease;
+  }
+
+  .site-header.is-scrolled .site-header__bar {
+    box-shadow: 0 10px 30px rgba(3, 13, 77, 0.1);
+  }
+
   .stats__list {
     flex-direction: column;
   }
